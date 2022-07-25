@@ -34,4 +34,14 @@ public class StudentController {
 
         studentService.deleteStudent(studentId);
     }
+    @PutMapping(path = "{studentId}")
+    public void updateStudent(@PathVariable("studentId")Long studentId ,
+                              @RequestParam(required = false)String name,
+                              @RequestParam(required = false)String email) throws IllegalAccessException {
+        studentService.updateStudent(studentId,name,email);
+
+    }
+
+
+
 }
